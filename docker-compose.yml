@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    image: zanettino/queenb-api:latest
+    container_name: queenb-api
+    restart: unless-stopped
+    environment:
+      - DATABASE_PATH=/app/data/aeroportos.db
+      - ALLOWED_ORIGINS=http://localhost,http://localhost:4200,http://frontend
+      - JWT_SECRET_KEY=sua_chave_secreta_super_segura_mude_em_producao_123456
+      - JWT_ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+    volumes:
+      - queenb-data:/app/data
+    ports:
+      - "8000:8000"
+    networks:
+      - queenb-network
+
+  frontend:
+    image: zanettino/queenb-frontend:latest
+    container_name: queenb-frontend
+    restart: unless-stopped
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - queenb-network
+
+networks:
+  queenb-network:
+    driver: bridge
+
+volumes:
+  queenb-data:
+    driver: local

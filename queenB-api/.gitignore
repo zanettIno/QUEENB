@@ -1,0 +1,50 @@
+# Byte-code files
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env/
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.bak
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Database files
+*.sqlite3
+*.db
+test_db.db # If you have a specific test database file
+
+# Configuration and sensitive files
+.env
+config.ini
+secrets.py # Or any file containing sensitive credentials
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+
+# Jupyter Notebook files
+.ipynb_checkpoints/
+
+# Pipenv
+Pipfile.lock # Include if you want to manage dependencies with Pipenv and commit the lock file
+
+# Poetry
+poetry.lock # Include if you want to manage dependencies with Poetry and commit the lock file
+
+# PDM
+pdm.lock # Include if you want to manage dependencies with PDM and commit the lock file
