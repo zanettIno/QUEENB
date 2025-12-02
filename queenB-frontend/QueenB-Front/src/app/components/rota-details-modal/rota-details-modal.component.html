@@ -1,0 +1,38 @@
+<div class="modal-backdrop" (click.self)="closeModal()">
+
+  <div class="modal-content">
+    
+    <h2 *ngIf="rota">
+      {{ rota?.origem | uppercase }} &rarr; {{ rota?.destino | uppercase }}
+    </h2>
+
+    <div class="details-list">
+      
+      <div class="detail-item">
+        <span class="label">Distância</span>
+        <span class="value">{{ rota?.distancia || 'N/A' }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Tempo Estimado</span>
+        <span class="value">{{ rota?.tempoEstimado || 'N/A' }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Data de Criação</span>
+        <span class="value">{{ rota?.dataCriacao || 'N/A' }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Status</span>
+        <span class="value">{{ rota?.status || 'N/A' }}</span>
+      </div>
+
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-primary" (click)="closeModal()">Fechar</button>
+    </div>
+
+  </div>
+</div>

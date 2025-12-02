@@ -1,0 +1,38 @@
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 40px;
+  box-sizing: border-box; 
+  border-bottom: 1px solid var(--color-border);
+  height: 72px; /* Altura fixa */
+  display: flex;
+  align-items: center;
+  
+  /* ADICIONE ISTO para empurrar o logo e o botão */
+  justify-content: space-between; 
+}
+
+/* ... (o CSS do .logo-container e .navbar img continua o mesmo) ... */
+.logo-container {
+  height: 40px;
+  width: 150px; 
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar img {
+  height: 60px; 
+  width: auto;
+}
+
+/* ADICIONE ESTE NOVO SELETOR NO FINAL */
+.logout-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+}

@@ -1,0 +1,45 @@
+<div class="modal-backdrop" (click.self)="closeModal()">
+  <div class="modal-content">
+    
+    <h2 *ngIf="rota; else novoTitulo">
+      {{ rota?.origem | uppercase }} &rarr; {{ rota?.destino | uppercase }}
+    </h2>
+    <ng-template #novoTitulo>
+      <h2>Nova Rota</h2>
+    </ng-template>
+
+    <form (ngSubmit)="saveRoute()">
+      
+      <fieldset class="input-field">
+        <legend>Origem</legend>
+        <input type="text" [(ngModel)]="formData.origem" name="origem" placeholder="Insira a origem">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Destino</legend>
+        <input type="text" [(ngModel)]="formData.destino" name="destino" placeholder="Insira o destino">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Distância</legend>
+        <input type="text" [(ngModel)]="formData.distancia" name="distancia" placeholder="Insira a distância em km">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Tempo estimado</legend>
+        <input type="text" [(ngModel)]="formData.tempoEstimado" name="tempoEstimado" placeholder="Insira o tempo estimado em horas e minutos">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Status</legend>
+        <input type="text" [(ngModel)]="formData.status" name="status">
+      </fieldset>
+
+      <div class="button-group">
+        <button type="button" class="btn btn-primary" (click)="closeModal()">Fechar</button>
+        <button type="submit" class="btn btn-secondary">Salvar</button>
+      </div>
+
+    </form>
+  </div>
+</div>

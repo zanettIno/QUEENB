@@ -1,0 +1,97 @@
+/* ================================
+   ESTILOS GLOBAIS - Queen B
+   ================================ */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: #FAFAFA;
+  color: #333333;
+}
+
+/* Variáveis CSS globais */
+:root {
+  --color-primary: #E47E02;
+  --color-primary-dark: #D98A00;
+  --color-primary-light: #FFF7E6;
+  --color-text-dark: #333333;
+  --color-text-grey: #757575;
+  --color-border: #E0E0E0;
+  --color-white: #FFFFFF;
+  --color-bg-light: #FAFAFA;
+  --color-success: #2e7d32;
+  --color-error: #c62828;
+}
+
+/* Remove outline padrão e adiciona estilo próprio */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Placeholder text */
+::placeholder {
+  color: #AAA;
+}
+
+/* Seleção de texto */
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-dark);
+}
+
+/* Correção para Leaflet - garante que o mapa renderize corretamente */
+.leaflet-container {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 15px !important;
+  line-height: 1.5 !important;
+}

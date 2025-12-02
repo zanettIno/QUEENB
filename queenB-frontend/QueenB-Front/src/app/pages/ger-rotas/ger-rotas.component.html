@@ -1,0 +1,50 @@
+<div class="page-container">
+  <h1>Gerenciamento de rotas</h1>
+
+  <div class="table-card">
+    
+    <div class="card-header">
+      <button class="btn-new-route" (click)="toggleModal(true)">Nova Rota</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Origem</th>
+            <th>Destino</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr *ngFor="let rota of rotas">
+            <td>{{ rota.id }}</td>
+            <td>{{ rota.origem }}</td>
+            <td>{{ rota.destino }}</td>
+            <td class="actions-cell">
+              <button class="btn btn-details" (click)="abrirModalDetalhes(rota)">Detalhes</button>
+              
+              <button class="btn btn-edit" (click)="abrirModalParaEditar(rota)">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<app-nova-rota-modal 
+  *ngIf="isModalOpen" 
+  [rota]="rotaParaEditar"
+  (close)="toggleModal(false)"
+  (save)="salvarRota($event)">
+</app-nova-rota-modal>
+
+<app-rota-details-modal
+  *ngIf="isDetailsModalOpen"
+  [rota]="rotaParaDetalhes"
+  (close)="fecharModalDetalhes()">
+</app-rota-details-modal>

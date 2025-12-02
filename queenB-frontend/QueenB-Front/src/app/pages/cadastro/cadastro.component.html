@@ -1,0 +1,64 @@
+<div class="login-page">
+  <main class="login-container">
+    
+    <section class="login-form-area">
+      <h2>Cadastro</h2>
+      
+      <!-- Mensagem de erro -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      
+      <form (ngSubmit)="onSubmit()">
+
+        <fieldset class="input-field">
+          <legend>Usuário</legend>
+          <input type="text" id="username" [(ngModel)]="username" name="username" placeholder="Seu nome">
+          <i class="fa-regular fa-user"></i>
+        </fieldset>
+
+        <fieldset class="input-field">
+          <legend>E-mail</legend>
+          <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="seu@email.com">
+          <i class="fa-regular fa-envelope"></i>
+        </fieldset>
+
+        <fieldset class="input-field">
+          <legend>Senha</legend>
+          <input [type]="passwordVisible ? 'text' : 'password'" id="password" [(ngModel)]="password" name="password" placeholder="Mínimo 6 caracteres">
+          <i (click)="togglePasswordVisibility()" 
+             [class]="passwordVisible ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'"
+             style="cursor: pointer;">
+          </i>
+        </fieldset>
+
+        <fieldset class="input-field">
+          <legend>Confirmar senha</legend>
+          <input [type]="confirmPasswordVisible ? 'text' : 'password'" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Repita a senha">
+          <i (click)="toggleConfirmPasswordVisibility()" 
+             [class]="confirmPasswordVisible ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'"
+             style="cursor: pointer;">
+          </i>
+        </fieldset>
+
+        <button type="submit" class="btn-login" [disabled]="loading">
+          {{ loading ? 'Cadastrando...' : 'Cadastrar' }}
+        </button>
+      </form>
+
+      <span class="register-link">
+        Já possui uma conta? <a [routerLink]="['/login']">Entrar</a>
+      </span>
+
+    </section>
+
+    <section class="login-welcome">
+      <div class="welcome-content">
+        <h1>Comece agora!</h1>
+        <p>Preencha os campos para concluir o seu<br>cadastro.</p>
+      </div>
+      <img src="/assets/images/abelha.png" alt="Abelha" class="bee-image">
+    </section>
+
+  </main>
+</div>

@@ -1,0 +1,11 @@
+/*
+O :host é o 'app-component'.
+O ::ng-deep "fura" a proteção do componente 'app-navbar'.
+*/
+:host .home-layout-active ::ng-deep .navbar {
+  /* Força a navbar a ter 100% de largura */
+  max-width: 100% !important;
+
+  /* ADICIONE ISSO: Diminui o padding da esquerda na home */
+  padding-left: 25px !important;
+}

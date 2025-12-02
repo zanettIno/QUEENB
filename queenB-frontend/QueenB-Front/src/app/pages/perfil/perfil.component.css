@@ -1,0 +1,135 @@
+:host {
+  --color-primary: #E47E02;
+  --color-text-dark: #333;
+  --color-grey-border: #E0E0E0;
+}
+
+/* O padding que vem do "pai" */
+.page-container {
+  padding: 30px;
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  font-family: 'Kadwa', serif;
+  font-size: 32px;
+  color: var(--color-text-dark);
+  margin-bottom: 30px;
+}
+
+.profile-card {
+  background: #FFF;
+  border-radius: 12px;
+  border: 2px solid var(--color-primary); /* Borda laranja */
+  padding: 30px;
+  
+  /* Largura máxima */
+  max-width: 600px; 
+  
+  /* Centralizar */
+  margin: 0 auto;
+}
+
+/* --- Mensagens --- */
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #a5d6a7;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #ef9a9a;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaço entre os inputs */
+}
+
+/* --- Estilo dos Inputs (Reutilizado) --- */
+.input-field {
+  border: 1px solid var(--color-grey-border);
+  border-radius: 8px; 
+  padding: 8px 15px 10px 15px;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.2s ease;
+  background-color: #fcfcfc; /* Fundo levemente cinza */
+}
+.input-field:focus-within {
+  border-color: var(--color-primary); 
+}
+
+.input-field legend {
+  padding: 0 5px; 
+  margin-left: 10px; 
+  font-size: 12px;
+  color: #757575;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.input-field input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 5px; 
+  background: transparent;
+  color: var(--color-text-dark);
+  font-family: 'Inter', sans-serif;
+}
+.input-field input::placeholder {
+  color: #AAA;
+}
+
+/* --- Estilo dos Botões (Reutilizado) --- */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  flex: 1; /* Faz os dois botões terem o mesmo tamanho */
+  border: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFF;
+}
+.btn-primary:hover {
+  background-color: #D98A00;
+}
+
+.btn-secondary {
+  background-color: #FFF;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: #FFF7E6;
+}
+.btn-secondary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

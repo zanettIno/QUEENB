@@ -1,0 +1,33 @@
+<nav class="sidebar-nav">
+  
+  <a routerLink="/home"
+     routerLinkActive="active" 
+     [routerLinkActiveOptions]="{exact: true}"
+     class="nav-item">
+    <i class="fa-solid fa-house"></i>
+    Tela Inicial
+  </a>
+  
+  <a routerLink="/home/rotas" 
+     routerLinkActive="active" 
+     class="nav-item">
+    <i class="fa-solid fa-route"></i>
+    Gerenciamento de rotas
+  </a>
+  
+  <a routerLink="/home/aeroportos" 
+   routerLinkActive="active" 
+   class="nav-item"> 
+  <i class="fa-solid fa-plane-departure"></i>
+  Aeroportos
+</a>
+</nav>
+
+<div class="sidebar-profile">
+  <a routerLink="/home/perfil" 
+     routerLinkActive="active" 
+     class="nav-item"> 
+    <i class="fa-solid fa-user"></i>
+    Perfil
+  </a>
+</div>

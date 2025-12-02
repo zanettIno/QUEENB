@@ -1,0 +1,52 @@
+<section class="search-section">
+  <div class="search-field">
+    <label>Embarque</label>
+    <input type="text" placeholder="Código IATA (ex: GRU)" [(ngModel)]="origem">
+  </div>
+  
+  <button class="swap-button" (click)="trocarOrigemDestino()">
+    <i class="fa-solid fa-right-left"></i>
+  </button>
+  
+  <div class="search-field">
+    <label>Destino</label>
+    <input type="text" placeholder="Código IATA (ex: GIG)" [(ngModel)]="destino">
+  </div>
+  
+  <div class="search-field" style="position: relative;">
+    <label>Filtros</label>
+  
+    <div class="custom-select-box" (click)="toggleDropdown()">
+      <span>{{ selectedFilter }}</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+
+    <ul class="custom-options" [class.open]="isDropdownOpen">
+      <li *ngFor="let option of filterOptions" (click)="selectFilter(option)">
+        {{ option }}
+      </li>
+    </ul>
+  </div>
+
+  <button class="btn-search" (click)="mostrarRota()" [disabled]="loading">
+    {{ loading ? 'Buscando...' : 'Mostrar rota' }}
+  </button>
+</section>
+
+<!-- Mensagem de erro -->
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<!-- Resultado da busca -->
+<div *ngIf="resultadoCaminho" class="result-info">
+  <strong>Rota encontrada:</strong> {{ formatarCaminhoExibicao() }}
+  <br>
+  <span>Distância: {{ resultadoCaminho.distancia_total_km }} km | 
+        Tempo: {{ formatarTempoExibicao() }} | 
+        Paradas: {{ resultadoCaminho.numero_paradas }}</span>
+</div>
+
+<section class="map-section">
+  <div id="map"></div>
+</section>

@@ -1,0 +1,47 @@
+<div class="page-container">
+  <h1>Seu perfil</h1>
+
+  <div class="profile-card">
+    
+    <!-- Mensagem de sucesso -->
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+    
+    <!-- Mensagem de erro -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    
+    <form (ngSubmit)="salvarPerfil()">
+      
+      <fieldset class="input-field">
+        <legend>Usuário</legend>
+        <input type="text" [(ngModel)]="perfil.usuario" name="usuario">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Email</legend>
+        <input type="email" [(ngModel)]="perfil.email" name="email">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Nova Senha (opcional)</legend>
+        <input type="password" [(ngModel)]="perfil.senha" name="senha" placeholder="Deixe em branco para manter a atual">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Confirmar Nova Senha</legend>
+        <input type="password" [(ngModel)]="perfil.confirmarSenha" name="confirmarSenha" placeholder="Confirme a nova senha">
+      </fieldset>
+
+      <div class="button-group">
+        <button type="button" class="btn btn-primary" (click)="fechar()">Voltar</button>
+        <button type="submit" class="btn btn-secondary" [disabled]="loading">
+          {{ loading ? 'Salvando...' : 'Salvar' }}
+        </button>
+      </div>
+      
+    </form>
+  </div>
+</div>

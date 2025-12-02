@@ -1,0 +1,43 @@
+<div class="modal-backdrop" (click.self)="closeModal()">
+  <div class="modal-content">
+    <h2>{{ aeroporto ? 'Editar Aeroporto' : 'Novo Aeroporto' }}</h2>
+
+    <form (ngSubmit)="saveData()">
+      
+      <fieldset class="input-field">
+        <legend>Código IATA</legend>
+        <input type="text" [(ngModel)]="formData.codigoIata" name="iata" placeholder="Ex: GRU" maxlength="3">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Nome</legend>
+        <input type="text" [(ngModel)]="formData.nome" name="nome" placeholder="Nome do Aeroporto">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Cidade</legend>
+        <input type="text" [(ngModel)]="formData.cidade" name="cidade">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>País</legend>
+        <input type="text" [(ngModel)]="formData.pais" name="pais">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Latitude</legend>
+        <input type="number" [(ngModel)]="formData.latitude" name="latitude" step="any">
+      </fieldset>
+
+      <fieldset class="input-field">
+        <legend>Longitude</legend>
+        <input type="number" [(ngModel)]="formData.longitude" name="longitude" step="any">
+      </fieldset>
+
+      <div class="button-group">
+        <button type="button" class="btn btn-primary" (click)="closeModal()">Fechar</button>
+        <button type="submit" class="btn btn-secondary">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>

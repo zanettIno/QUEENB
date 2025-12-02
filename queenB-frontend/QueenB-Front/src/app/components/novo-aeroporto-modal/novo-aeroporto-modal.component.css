@@ -1,0 +1,112 @@
+:host {
+  --color-primary: #F29900;
+  --color-text-dark: #333;
+  --color-grey-border: #E0E0E0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #FFF;
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+  font-family: 'Inter', sans-serif;
+}
+
+h2 {
+  font-family: 'Kadwa', serif;
+  font-size: 24px;
+  color: var(--color-text-dark);
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.input-field {
+  border: 1px solid var(--color-grey-border);
+  border-radius: 8px; 
+  padding: 8px 15px 10px 15px;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.2s ease;
+}
+.input-field:focus-within {
+  border-color: var(--color-primary); 
+}
+
+.input-field legend {
+  padding: 0 5px; 
+  margin-left: 10px; 
+  font-size: 12px;
+  color: #757575;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.input-field input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 5px; 
+  background: transparent;
+  color: var(--color-text-dark);
+  font-family: 'Inter', sans-serif;
+}
+.input-field input::placeholder {
+  color: #AAA;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  flex: 1; 
+  border: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFF;
+}
+.btn-primary:hover {
+  background-color: #D98A00;
+}
+
+.btn-secondary {
+  background-color: #FFF;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+.btn-secondary:hover {
+  background-color: #FFF7E6;
+}

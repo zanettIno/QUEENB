@@ -1,0 +1,47 @@
+<div class="page-container">
+  <h1>Aeroportos</h1>
+
+  <div class="table-card">
+    
+    <div class="card-header">
+      <button class="btn-new-route" (click)="toggleModal(true)">Novo Aeroporto</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>IATA</th>
+            <th>Nome</th>
+            <th>Cidade/País</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let aero of aeroportos">
+            <td><strong>{{ aero.codigoIata }}</strong></td>
+            <td>{{ aero.nome }}</td>
+            <td>{{ aero.cidade }} - {{ aero.pais }}</td>
+            <td class="actions-cell">
+              <button class="btn btn-details" (click)="abrirModalDetalhes(aero)">Detalhes</button>
+              <button class="btn btn-edit" (click)="abrirModalEditar(aero)">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-novo-aeroporto-modal 
+  *ngIf="isModalOpen" 
+  [aeroporto]="aeroportoParaEditar"
+  (close)="toggleModal(false)"
+  (save)="salvarAeroporto($event)">
+</app-novo-aeroporto-modal>
+
+<app-aeroporto-details-modal
+  *ngIf="isDetailsModalOpen"
+  [aeroporto]="aeroportoParaDetalhes"
+  (close)="fecharModalDetalhes()">
+</app-aeroporto-details-modal>

@@ -1,0 +1,69 @@
+:host {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Empurra o Perfil para baixo */
+  height: 100%; 
+  padding: 0; /* GARANTE que não há padding */
+
+  /* Define as variáveis de cor para este componente */
+  --color-primary: #E47E02;
+  --color-primary-dark: #D98A00;
+  --color-primary-light: #F9B84E;
+  --color-text-light: #FFF;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaço entre os itens */
+  
+  /* Padding só na navegação */
+  padding: 25px 15px 0 15px; 
+}
+
+.nav-item {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  transition: background-color 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.nav-item.active {
+  background-color: var(--color-primary-light);
+}
+
+/* --- A MÁGICA ESTÁ AQUI --- */
+
+.sidebar-profile {
+  position: relative;
+  /* Padding para o item "Perfil" */
+  padding: 20px 15px;
+  
+  /* GARANTIA de que não tem borda */
+  border-top: none !important; 
+}
+
+/* "Linha falsa" que respeita o padding */
+.sidebar-profile::before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  
+  /* Empurra a linha 15px de cada lado */
+  left: 15px;
+  right: 15px;
+
+  height: 1px;
+  background-color: var(--color-primary-light); 
+}

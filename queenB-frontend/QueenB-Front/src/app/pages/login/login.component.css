@@ -1,0 +1,296 @@
+/* --- Variáveis de Cor (CSS Padrão) --- */
+:host {
+  --color-primary: #E47E02; /* Laranja principal */
+  --color-dark: #333333;
+  --color-grey: #757575;
+  --color-border: #E0E0E0;
+  --color-white: #FFFFFF;
+  --color-bg-light: #FAFAFA; /* Fundo da página */
+}
+
+/* --- Layout da Página Inteira --- */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-bg-light);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- 2. Card Principal --- */
+.login-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+  width: 100%;
+  max-width: 1200px;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden; 
+  margin: 40px 0; 
+}
+
+/* --- Coluna Esquerda (Laranja) --- */
+.login-welcome {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  position: relative; /* A "âncora" da abelha */
+  overflow: hidden; /* Para o rastro não vazar */
+}
+
+.welcome-content {
+  padding: 60px;
+  position: relative;
+  z-index: 2; /* Garante que o texto fique por cima da abelha */
+}
+
+.login-welcome h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  font-family: 'Kadwa', serif;
+}
+
+.login-welcome p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+/* --- A Abelha Flutuante --- */
+.bee-image {
+  position: absolute; 
+  width: 280px;       
+  z-index: 1; 
+  bottom: 5px;   
+  left: -15px; 
+}
+
+/* --- Coluna Direita (Formulário) --- */
+.login-form-area {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-area h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 30px;
+  font-family: 'Kadwa', serif;
+}
+
+/* --- Mensagem de Erro --- */
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #ef9a9a;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- Inputs (Fieldset/Legend) --- */
+.input-field {
+  border: 1px solid var(--color-border);
+  border-radius: 50px; 
+  padding: 10px 20px 12px 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: border-color 0.2s ease;
+}
+.input-field:focus-within {
+  border-color: var(--color-primary); 
+}
+
+.input-field legend {
+  padding: 0 8px; 
+  margin-left: 15px; 
+  font-size: 13px;
+  color: var(--color-grey);
+  font-weight: 500;
+}
+
+.input-field input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 5px; 
+  background: transparent;
+  color: var(--color-dark);
+  font-family: 'Inter', sans-serif;
+}
+
+.input-field i { 
+  margin-left: 10px;
+  color: var(--color-grey);
+}
+
+/* --- Links e Botões --- */
+.forgot-password {
+  align-self: flex-end;
+  font-size: 14px;
+  color: var(--color-grey);
+  text-decoration: none;
+  margin-bottom: 25px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.btn-login {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 18px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-login:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-login:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 15px;
+  color: var(--color-grey);
+}
+
+.register-link a {
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* --- CSS Botão Google Oficial --- */
+.gsi-material-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  background-color: WHITE;
+  background-image: none;
+  border: 1px solid #747775;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-family: 'Roboto', arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  letter-spacing: 0.25px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin: 20px auto 0 auto; 
+  max-width: 400px;
+  min-width: min-content;
+}
+
+.gsi-material-button .gsi-material-button-icon {
+  height: 20px;
+  margin-right: 12px;
+  min-width: 20px;
+  width: 20px;
+}
+
+.gsi-material-button .gsi-material-button-content-wrapper {
+  -webkit-align-items: center;
+  align-items: center;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.gsi-material-button .gsi-material-button-contents {
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+.gsi-material-button .gsi-material-button-state {
+  -webkit-transition: opacity .218s;
+  transition: opacity .218s;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.gsi-material-button:disabled {
+  cursor: default;
+  background-color: #ffffff61;
+  border-color: #1f1f1f1f;
+}
+
+.gsi-material-button:disabled .gsi-material-button-contents {
+  opacity: 38%;
+}
+
+.gsi-material-button:disabled .gsi-material-button-icon {
+  opacity: 38%;
+}
+
+.gsi-material-button:not(:disabled):active .gsi-material-button-state,
+.gsi-material-button:not(:disabled):focus .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 12%;
+}
+
+.gsi-material-button:not(:disabled):hover {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+}
+
+.gsi-material-button:not(:disabled):hover .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 8%;
+}

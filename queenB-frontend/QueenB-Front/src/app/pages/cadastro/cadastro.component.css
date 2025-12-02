@@ -1,0 +1,199 @@
+/* --- Variáveis de Cor (CSS Padrão) --- */
+:host {
+  --color-primary: #E47E02; /* Laranja principal */
+  --color-dark: #333333;
+  --color-grey: #757575;
+  --color-border: #E0E0E0;
+  --color-white: #FFFFFF;
+  --color-bg-light: #FAFAFA; /* Fundo da página */
+}
+
+/* --- Layout da Página Inteira --- */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-bg-light);
+  min-height: 100vh;
+  /* FONTE PADRÃO: INTER */
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- 2. Card Principal --- */
+.login-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+  width: 100%;
+  max-width: 1200px;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden; 
+  margin: 40px 0; 
+}
+
+/* --- Coluna Direita (Laranja) --- */
+.login-welcome {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  position: relative; /* A "âncora" da abelha */
+  overflow: hidden; /* Para o rastro não vazar */
+}
+
+/* Bloco de texto (agora na direita) */
+.welcome-content {
+  padding: 60px; /* Colocamos o padding aqui */
+  position: relative;
+  z-index: 2; /* Garante que o texto fique por cima da abelha */
+}
+
+.login-welcome h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  /* FONTE TÍTULO: KADWA */
+  font-family: 'Kadwa', serif;
+}
+
+.login-welcome p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+/* --- A Abelha Flutuante (Invertida) --- */
+.bee-image {
+  position: absolute; 
+  width: 280px;       
+  z-index: 1; 
+  bottom: 20px;       /* Posição Y */
+  
+  /* --- MUDANÇA PRINCIPAL --- */
+  right: -15px;        /* Puxa para a direita */
+  transform: scaleX(-1); /* Espelha a imagem */
+}
+
+/* --- Coluna Esquerda (Formulário) --- */
+.login-form-area {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-area h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 30px;
+  /* FONTE TÍTULO: KADWA */
+  font-family: 'Kadwa', serif;
+}
+
+/* --- Mensagem de Erro --- */
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #ef9a9a;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- Inputs (Fieldset/Legend) --- */
+.input-field {
+  border: 1px solid var(--color-border);
+  border-radius: 50px; 
+  padding: 10px 20px 12px 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: border-color 0.2s ease;
+}
+.input-field:focus-within {
+  border-color: var(--color-primary); 
+}
+
+.input-field legend {
+  padding: 0 8px; 
+  margin-left: 15px; 
+  font-size: 13px;
+  color: var(--color-grey);
+  font-weight: 500;
+}
+
+.input-field input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 5px; 
+  background: transparent;
+  color: var(--color-dark);
+  font-family: 'Inter', sans-serif;
+}
+
+.input-field i { 
+  margin-left: 10px;
+  color: var(--color-grey);
+}
+
+/* --- Links e Botões --- */
+.forgot-password {
+  align-self: flex-end;
+  font-size: 14px;
+  color: var(--color-grey);
+  text-decoration: none;
+  margin-bottom: 25px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.btn-login {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 18px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  margin-top: 10px; /* Espaço extra para o form de cadastro */
+}
+
+.btn-login:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-login:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 15px;
+  color: var(--color-grey);
+}
+
+.register-link a {
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: none;
+}

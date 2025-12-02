@@ -1,0 +1,110 @@
+:host {
+  --color-primary: #E47E02;
+  --color-primary-light: #FFF7E6;
+  --color-text-dark: #333;
+  --color-grey-border: #E0E0E0;
+}
+
+.page-container {
+  padding: 30px;
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  font-family: 'Kadwa', serif;
+  font-size: 32px;
+  color: var(--color-text-dark);
+  margin-bottom: 30px;
+}
+
+.table-card {
+  background: #FFF;
+  border-radius: 12px;
+  border: 1px solid var(--color-grey-border);
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  align-items: center; /* Centraliza o botão "Nova Rota" */
+}
+
+.btn-new-route {
+  background-color: var(--color-primary);
+  color: #FFF;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.btn-new-route:hover {
+  background-color: #D98A00;
+}
+
+.table-wrapper {
+  border-top: 1px solid var(--color-grey-border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; 
+}
+
+th, td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-grey-border);
+  
+  /* --- ESTA É A LINHA QUE O SEU NAVEGADOR ESTÁ IGNORANDO --- */
+  vertical-align: middle; 
+}
+
+th {
+  font-size: 14px;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+td {
+  font-size: 16px;
+  color: var(--color-text-dark);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.actions-cell {
+  /* O flex aqui está correto (só para os botões) */
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-details {
+  background-color: var(--color-primary);
+  color: #FFF;
+}
+
+.btn-edit {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}

@@ -1,0 +1,20 @@
+<div class="modal-backdrop" (click.self)="closeModal()">
+  <div class="modal-content">
+    
+    <h2 *ngIf="aeroporto">
+      {{ aeroporto?.codigoIata }} - {{ aeroporto?.nome }}
+    </h2>
+
+    <div class="details-list">
+      <div class="detail-item"><span class="label">Cidade</span><span class="value">{{ aeroporto?.cidade }}</span></div>
+      <div class="detail-item"><span class="label">País</span><span class="value">{{ aeroporto?.pais }}</span></div>
+      <div class="detail-item"><span class="label">Latitude</span><span class="value">{{ aeroporto?.latitude }}</span></div>
+      <div class="detail-item"><span class="label">Longitude</span><span class="value">{{ aeroporto?.longitude }}</span></div>
+      <div class="detail-item"><span class="label">Data de Criação</span><span class="value">{{ aeroporto?.dataCriacao }}</span></div>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-primary" (click)="closeModal()">Fechar</button>
+    </div>
+  </div>
+</div>
